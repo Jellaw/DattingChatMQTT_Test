@@ -8,4 +8,9 @@
     <string name="text_btnSignUp">Sign up with phone</string>
     <string name="title2">Already have an account?</string>
     <string name="text_txtSignIn"><u>Sign in</u></string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_profile">Profile</string>
 </resources>
