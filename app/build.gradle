@@ -25,6 +25,7 @@ android {
 repositories {
     maven {
         url "https://repo.eclipse.org/content/repositories/paho-releases/"
+        maven { url 'https://jitpack.io' }
     }
 }
 
@@ -47,4 +48,5 @@ dependencies {
         exclude module: 'support-v4'
     }
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+    implementation 'com.github.thunder413:DateTimeUtils:3.0'
 }
