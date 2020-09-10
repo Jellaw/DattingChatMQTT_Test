@@ -40,7 +40,7 @@ public class ChattingActivity extends AppCompatActivity implements MqttCallback 
     // global types
     private MqttAndroidClient client;
     private EditText textMessage;
-    String message;
+    private String message;
     Handler mHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,7 +112,7 @@ public class ChattingActivity extends AppCompatActivity implements MqttCallback 
                 // we only publish if there is message to publish
                 if (!message.isEmpty()) {
                     name = USER_NAME;
-                    message =  message;
+                    message = name+" " + message.toString();
                     textMessage.setText("");
                     MqttMessage mqttMessage = new MqttMessage(message.getBytes());
                     mqttMessage.setQos(QOS);
@@ -179,7 +179,13 @@ public class ChattingActivity extends AppCompatActivity implements MqttCallback 
         String currentTime = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date());
 
 
-        messageList.add(new UserMessage(name,message.toString(),currentTime));
+    if (message.toString().contains(Build.DEVICE)) {
+        String message1 = message.toString().substring(message.toString().indexOf(" "));
+        messageList.add(new UserMessage(name, message1.toString(), currentTime));
+    } else {
+        String message1 = message.toString().substring(message.toString().indexOf(" "));
+        messageList.add(new UserMessage("", message1.toString(), currentTime));
+    }
         mMessageAdapter.notifyDataSetChanged();
 
 

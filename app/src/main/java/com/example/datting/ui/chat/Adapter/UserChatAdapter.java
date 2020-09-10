@@ -1,6 +1,8 @@
 package com.example.datting.ui.chat.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.datting.ChattingActivity;
 import com.example.datting.R;
 import com.example.datting.ui.chat.Model.UserChat;
 
@@ -33,7 +36,7 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.Viewho
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull final Viewholder holder, int position) {
         holder.tv_name.setText(userChats.get(position).getNameUserChat());
         holder.tv_text.setText(userChats.get(position).getTextUserChat());
         holder.tv_time.setText(userChats.get(position).getTimeUserChat());
@@ -41,6 +44,18 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.Viewho
 
         holder.civ_image.setImageResource(userChats.get(position).getImgUserChat());
         holder.cim_chamXanh.setImageResource(userChats.get(position).getImgChamXanh());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ChattingActivity.class);
+                holder.itemView.setBackgroundColor(Color.parseColor("#80EDEAEA"));
+                context.startActivity(intent);
+            }
+        });
+    }
+    public interface OnItemClickedListener {
+        void onItemClick(String username);
     }
 
     @Override

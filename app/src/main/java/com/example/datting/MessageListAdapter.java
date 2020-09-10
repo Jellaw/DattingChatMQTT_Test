@@ -1,6 +1,7 @@
 package com.example.datting;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -66,7 +68,7 @@ public class MessageListAdapter extends RecyclerView.Adapter {
 
     // Passes the message object to a ViewHolder so that the contents can be bound to UI.
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         UserMessage message = (UserMessage) mMessageList.get(position);
 
         switch (holder.getItemViewType()) {
@@ -76,7 +78,9 @@ public class MessageListAdapter extends RecyclerView.Adapter {
             case VIEW_TYPE_MESSAGE_RECEIVED:
                 ((ReceivedMessageHolder) holder).bind(message);
         }
+
     }
+
     @Override
     public int getItemCount() {
         return mMessageList.size();
