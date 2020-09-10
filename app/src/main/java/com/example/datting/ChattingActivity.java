@@ -111,7 +111,7 @@ public class ChattingActivity extends AppCompatActivity implements MqttCallback 
                  message = textMessage.getText().toString();
                 // we only publish if there is message to publish
                 if (!message.isEmpty()) {
-                    name = USER_NAME+": ";
+                    name = USER_NAME;
                     message =  message;
                     textMessage.setText("");
                     MqttMessage mqttMessage = new MqttMessage(message.getBytes());
@@ -180,6 +180,7 @@ public class ChattingActivity extends AppCompatActivity implements MqttCallback 
 
 
         messageList.add(new UserMessage(name,message.toString(),currentTime));
+        mMessageAdapter.notifyDataSetChanged();
 
 
     }
