@@ -49,4 +49,8 @@ dependencies {
     }
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
     implementation 'com.github.thunder413:DateTimeUtils:3.0'
+
+    implementation 'com.android.support:design:29.0.2'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
