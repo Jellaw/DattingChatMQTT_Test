@@ -1,10 +1,13 @@
 package com.example.datting;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,23 +39,32 @@ public class ChattingActivity extends AppCompatActivity implements MqttCallback 
     // user name for the chat
     private static final String USER_NAME = Build.DEVICE;
     String name;
+    ImageView avaUser;
+    TextView nameUser;
 
     // global types
     private MqttAndroidClient client;
     private EditText textMessage;
     private String message;
     Handler mHandler;
+    Intent i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chatting);
-
+        avaUser = findViewById(R.id.avaUser);
+        nameUser = findViewById(R.id.userName);
+        //=======RecycleView=====================================================
         mMessageRecycler = (RecyclerView) findViewById(R.id.messenger_view);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         mMessageRecycler.setLayoutManager(manager);
         mMessageRecycler.setHasFixedSize(true);
         mMessageAdapter = new MessageListAdapter(this, messageList);
         mMessageRecycler.setAdapter(mMessageAdapter);
+        //=====================switch info from fragment==========================
+        i = getIntent();
+        avaUser.setImageResource(i.getIntExtra("img_ava",0));
+        nameUser.setText(i.getStringExtra("nameUser"));
 
         //=========================================================================
         // get text elements to re-use them

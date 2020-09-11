@@ -45,11 +45,17 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.Viewho
         holder.civ_image.setImageResource(userChats.get(position).getImgUserChat());
         holder.cim_chamXanh.setImageResource(userChats.get(position).getImgChamXanh());
 
+        final int img = userChats.get(position).getImgUserChat();
+        final String nameUser = userChats.get(position).getNameUserChat();
+
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ChattingActivity.class);
                 holder.itemView.setBackgroundColor(Color.parseColor("#80EDEAEA"));
+                intent.putExtra("img_ava", img);
+                intent.putExtra("nameUser", nameUser);
                 context.startActivity(intent);
             }
         });
