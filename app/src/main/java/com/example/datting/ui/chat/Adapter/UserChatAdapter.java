@@ -60,9 +60,7 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.Viewho
             }
         });
     }
-    public interface OnItemClickedListener {
-        void onItemClick(String username);
-    }
+
 
     @Override
     public int getItemCount() {
