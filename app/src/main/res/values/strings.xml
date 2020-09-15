@@ -17,5 +17,5 @@
     <string name="enter_mess">Enter message</string>
     <string name="statusOnline">Online</string>
     <string name="statusOffline">Offline</string>
-    <string name="dot">•</string>
+    <string name="batcap">Bắt gặp</string>
 </resources>
