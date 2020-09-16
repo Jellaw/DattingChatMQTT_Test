@@ -45,7 +45,7 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
-        ImageView image;
+        ImageView image, imgX, imgT, imgTT;
         TextView name, age, address;
         ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -53,6 +53,9 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
             name = itemView.findViewById(R.id.item_name);
             age = itemView.findViewById(R.id.item_age);
             address = itemView.findViewById(R.id.item_city);
+            imgX = itemView.findViewById(R.id.cancelBtn);
+            imgT = itemView.findViewById(R.id.likeBtn);
+            imgTT = itemView.findViewById(R.id.loveBtn);
         }
 
         void setData(ItemModel data) {
@@ -60,6 +63,21 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
                     .load(data.getImage())
                     .centerCrop()
                     .into(image);
+            Glide.with(context)
+                    .load(R.drawable.cancer)
+                    .override(100,100)
+                    .skipMemoryCache(true)
+                    .into(imgX);
+            Glide.with(context)
+                    .load(R.drawable.imgpsh_fullsize_anim)
+                    .override(100,100)
+                    .skipMemoryCache(true)
+                    .into(imgT);
+            Glide.with(context)
+                    .load(R.drawable.imgpsh_fullsize)
+                    .override(100,100)
+                    .skipMemoryCache(true)
+                    .into(imgTT);
             name.setText(data.getName());
             age.setText(data.getAge());
             address.setText(data.getAddress());
