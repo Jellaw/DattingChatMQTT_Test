@@ -38,6 +38,7 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.Viewho
 
     @Override
     public void onBindViewHolder(@NonNull final Viewholder holder, int position) {
+        //Glide fix lag load image
         Glide.with(context)
                 .load(userChats.get(position).getImgUserChat())
                 .centerCrop()

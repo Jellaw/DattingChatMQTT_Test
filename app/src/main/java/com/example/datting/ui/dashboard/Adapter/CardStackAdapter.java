@@ -1,5 +1,6 @@
 package com.example.datting.ui.dashboard.Adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,18 +10,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.datting.ui.dashboard.Model.ItemModel;
+import com.bumptech.glide.Glide;
 import com.example.datting.R;
-import com.squareup.picasso.Picasso;
+import com.example.datting.ui.dashboard.Model.ItemModel;
 
 import java.util.List;
 
 public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.ViewHolder> {
 
     private List<ItemModel> items;
+    Context context;
 
-    public CardStackAdapter(List<ItemModel> items) {
+    public CardStackAdapter(Context context, List<ItemModel> items) {
         this.items = items;
+        this.context = context;
     }
 
     @NonNull
@@ -43,22 +46,21 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
 
     class ViewHolder extends RecyclerView.ViewHolder{
         ImageView image;
-        TextView nama, age, address;
+        TextView name, age, address;
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.item_image);
-            nama = itemView.findViewById(R.id.item_name);
+            name = itemView.findViewById(R.id.item_name);
             age = itemView.findViewById(R.id.item_age);
             address = itemView.findViewById(R.id.item_city);
         }
 
         void setData(ItemModel data) {
-            Picasso.get()
+            Glide.with(context)
                     .load(data.getImage())
-                    .fit()
                     .centerCrop()
                     .into(image);
-            nama.setText(data.getName());
+            name.setText(data.getName());
             age.setText(data.getAge());
             address.setText(data.getAddress());
         }

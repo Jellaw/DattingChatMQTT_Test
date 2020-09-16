@@ -56,10 +56,10 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_cancel"
+                android:src="@drawable/cancer"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -78,7 +78,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:src="@drawable/imgpsh_fullsize_anim__1_"
+                android:src="@drawable/imgpsh_fullsize"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
         </LinearLayout>
@@ -91,7 +91,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/overlay_black">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
@@ -105,11 +105,11 @@
         android:layout_height="match_parent"
         android:background="@drawable/overlay_black">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:src="@drawable/imgpsh_fullsize_anim__1_" />
+            android:src="@drawable/imgpsh_fullsize" />
 
     </FrameLayout>
 
@@ -119,11 +119,11 @@
         android:layout_height="match_parent"
         android:background="@drawable/overlay_black">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_cancel"
-            android:layout_gravity="center"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/cancer" />
 
     </FrameLayout>
 
