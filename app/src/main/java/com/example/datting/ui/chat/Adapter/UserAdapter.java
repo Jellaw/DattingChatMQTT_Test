@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 import com.example.datting.R;
 import com.example.datting.ui.chat.Model.User;
 
@@ -33,8 +35,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Glide.with(context)
+                .load(users.get(position).getImgUser())
+                .centerCrop()
+                .into(holder.img);
         holder.name.setText(users.get(position).getNameUser());
-        holder.img.setImageResource(users.get(position).getImgUser());
     }
 
     @Override

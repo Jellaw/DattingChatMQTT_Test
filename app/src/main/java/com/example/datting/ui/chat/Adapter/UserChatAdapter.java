@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.datting.ChattingActivity;
 import com.example.datting.R;
 import com.example.datting.ui.chat.Model.UserChat;
@@ -37,13 +38,20 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.Viewho
 
     @Override
     public void onBindViewHolder(@NonNull final Viewholder holder, int position) {
+        Glide.with(context)
+                .load(userChats.get(position).getImgUserChat())
+                .centerCrop()
+                .into(holder.civ_image);
+        Glide.with(context)
+                .load(userChats.get(position).getImgChamXanh())
+                .centerCrop()
+                .into(holder.cim_chamXanh);
+
         holder.tv_name.setText(userChats.get(position).getNameUserChat());
         holder.tv_text.setText(userChats.get(position).getTextUserChat());
         holder.tv_time.setText(userChats.get(position).getTimeUserChat());
         holder.tv_number.setText(userChats.get(position).getNumberUserChat());
 
-        holder.civ_image.setImageResource(userChats.get(position).getImgUserChat());
-        holder.cim_chamXanh.setImageResource(userChats.get(position).getImgChamXanh());
 
         final int img = userChats.get(position).getImgUserChat();
         final String nameUser = userChats.get(position).getNameUserChat();

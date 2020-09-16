@@ -11,10 +11,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.datting.R;
+import com.example.datting.ui.dashboard.Model.ItemModel;
 import com.example.datting.ui.home.Model.UserCompass;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -36,8 +40,11 @@ public class CompassAdapter extends RecyclerView.Adapter<CompassAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+            Glide.with(context)
+                    .load(userCompasses.get(position).getImg())
+                    .centerCrop()
+                    .into(holder.image_view);
 
-        holder.image_view.setImageResource(userCompasses.get(position).getImg());
         holder.text_view.setText(userCompasses.get(position).getName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -64,5 +71,7 @@ public class CompassAdapter extends RecyclerView.Adapter<CompassAdapter.ViewHold
             text_view = itemView.findViewById(R.id.text_view);
             ll_item = itemView.findViewById(R.id.ll_item);
         }
+
     }
+
 }
