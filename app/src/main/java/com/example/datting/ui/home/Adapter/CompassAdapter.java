@@ -1,6 +1,8 @@
 package com.example.datting.ui.home.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,16 +11,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.datting.ChattingActivity;
 import com.example.datting.R;
-import com.example.datting.ui.dashboard.Model.ItemModel;
+import com.example.datting.ui.home.BottomSheetFragment;
 import com.example.datting.ui.home.Model.UserCompass;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -51,8 +53,18 @@ public class CompassAdapter extends RecyclerView.Adapter<CompassAdapter.ViewHold
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, "" + position, Toast.LENGTH_SHORT).show();
+                BottomSheetFragment bottomSheetDialog = BottomSheetFragment.newInstance();
+                bottomSheetDialog.show(((AppCompatActivity) context).getSupportFragmentManager(),"Bottom Sheet Dialog Fragment");
+
+                final int img = userCompasses.get(position).getImg();
+                final String nameUser = userCompasses.get(position).getName();
+
+                Intent intent = new Intent(context, BottomSheetFragment.class);
+                intent.putExtra("img_ava", img);
+                intent.putExtra("nameUser", nameUser);
             }
         });
+
     }
 
     @Override
