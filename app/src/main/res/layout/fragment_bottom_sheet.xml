@@ -9,18 +9,12 @@
     android:paddingBottom="@dimen/_8sdp"
     tools:context=".ui.home.BottomSheetFragment">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/roundedborder"
-        android:id="@+id/RelativeLayoutSheet"
-        android:orientation="vertical">
 
         <com.yuyakaido.android.cardstackview.CardStackView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/card_stack_view_dialog" />
 
-    </RelativeLayout>
+
 
 </RelativeLayout>

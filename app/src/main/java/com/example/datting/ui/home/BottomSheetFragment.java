@@ -4,30 +4,29 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.datting.R;
-import com.example.datting.ui.dashboard.Model.ItemModel;
 import com.example.datting.ui.home.Adapter.DialogAdapter;
-import com.example.datting.ui.home.Model.UserCompass;
 import com.example.datting.ui.home.Model.UserDialog;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
+import com.yuyakaido.android.cardstackview.CardStackListener;
 import com.yuyakaido.android.cardstackview.CardStackView;
+import com.yuyakaido.android.cardstackview.Direction;
+import com.yuyakaido.android.cardstackview.StackFrom;
+import com.yuyakaido.android.cardstackview.SwipeableMethod;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class BottomSheetFragment extends BottomSheetDialogFragment {
     CardStackView cardStackView;
     BottomSheetBehavior bottomSheetBehavior;
-    Intent i;
-
 
     public static BottomSheetFragment newInstance() {
         BottomSheetFragment fragment = new BottomSheetFragment();
@@ -67,13 +66,13 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
 
             }
         });
+        manager.setCanScrollHorizontal(false);
+        manager.setSwipeableMethod(SwipeableMethod.Manual);
         return dialog;
     }
     private ArrayList<UserDialog> addList() {
         ArrayList<UserDialog> items = new ArrayList<>();
         items.add(new UserDialog(R.drawable.avt, "Nam Anh ocs chos", "24", "Jember"));
-       // image.setImageResource();
-       // name.setText(i.getStringExtra("nameUser"));
         return items;
     }
 

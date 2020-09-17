@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,17 +14,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.datting.R;
 import com.example.datting.ui.dashboard.Model.ItemModel;
+import com.yuyakaido.android.cardstackview.Direction;
+import com.yuyakaido.android.cardstackview.Duration;
+import com.yuyakaido.android.cardstackview.SwipeAnimationSetting;
 
 import java.util.List;
 
 public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.ViewHolder> {
 
     private List<ItemModel> items;
-    Context context;
+    private Context context;
+    private ClickReaction clickReaction;
 
-    public CardStackAdapter(Context context, List<ItemModel> items) {
+
+    public CardStackAdapter(List<ItemModel> items, Context context, ClickReaction clickReaction) {
         this.items = items;
         this.context = context;
+        this.clickReaction = clickReaction;
     }
 
     @NonNull
@@ -37,6 +44,28 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.setData(items.get(position));
+        holder.imgX.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SwipeAnimationSetting setting = new SwipeAnimationSetting.Builder()
+                        .setDirection(Direction.Left)
+                        .setDuration(Duration.Normal.duration)
+                        .setInterpolator(new AccelerateInterpolator())
+                        .build();
+                clickReaction.setOnClick(setting);
+            }
+        });
+        holder.imgTT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SwipeAnimationSetting setting = new SwipeAnimationSetting.Builder()
+                        .setDirection(Direction.Right)
+                        .setDuration(Duration.Normal.duration)
+                        .setInterpolator(new AccelerateInterpolator())
+                        .build();
+                clickReaction.setOnClick(setting);
+            }
+        });
     }
 
     @Override
@@ -56,6 +85,7 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
             imgX = itemView.findViewById(R.id.cancelBtn);
             imgT = itemView.findViewById(R.id.likeBtn);
             imgTT = itemView.findViewById(R.id.loveBtn);
+
         }
 
         void setData(ItemModel data) {

@@ -4,8 +4,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
 import android.view.animation.LinearInterpolator;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -14,23 +17,27 @@ import androidx.recyclerview.widget.DiffUtil;
 
 import com.example.datting.ui.dashboard.Adapter.CardStackAdapter;
 import com.example.datting.ui.dashboard.Adapter.CardStackCallback;
+import com.example.datting.ui.dashboard.Adapter.ClickReaction;
 import com.example.datting.ui.dashboard.Model.ItemModel;
 import com.example.datting.R;
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
 import com.yuyakaido.android.cardstackview.CardStackListener;
 import com.yuyakaido.android.cardstackview.CardStackView;
 import com.yuyakaido.android.cardstackview.Direction;
+import com.yuyakaido.android.cardstackview.Duration;
 import com.yuyakaido.android.cardstackview.StackFrom;
+import com.yuyakaido.android.cardstackview.SwipeAnimationSetting;
 import com.yuyakaido.android.cardstackview.SwipeableMethod;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DashboardFragment extends Fragment {
+public class DashboardFragment extends Fragment implements ClickReaction {
 
     private CardStackLayoutManager manager;
     private CardStackAdapter adapter;
     CardStackView cardStackView;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -38,8 +45,9 @@ public class DashboardFragment extends Fragment {
         init(root);
         return root;
     }
+
     private void init(View root) {
-         cardStackView = root.findViewById(R.id.card_stack_view2);
+        cardStackView = root.findViewById(R.id.card_stack_view2);
         manager = new CardStackLayoutManager(getContext(), new CardStackListener() {
             @Override
             public void onCardDragging(Direction direction, float ratio) {
@@ -49,9 +57,8 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onCardSwiped(Direction direction) {
 
-
                 // Paginating
-                if (manager.getTopPosition() == adapter.getItemCount() - 5){
+                if (manager.getTopPosition() == adapter.getItemCount() - 5) {
                     paginate();
                 }
 
@@ -79,17 +86,18 @@ public class DashboardFragment extends Fragment {
 
             }
         });
+
+
         manager.setStackFrom(StackFrom.None);
         manager.setVisibleCount(3);
         manager.setTranslationInterval(8.0f);
         manager.setScaleInterval(0.95f);
         manager.setSwipeThreshold(0.3f);
         manager.setMaxDegree(20.0f);
-        manager.setDirections(Direction.FREEDOM);
-        manager.setCanScrollHorizontal(true);
-        manager.setSwipeableMethod(SwipeableMethod.Manual);
+        manager.setDirections(Direction.HORIZONTAL);
+        manager.setCanScrollVertical(false);
         manager.setOverlayInterpolator(new LinearInterpolator());
-        adapter = new CardStackAdapter(getContext(), addList());
+        adapter = new CardStackAdapter(addList(), getActivity(),this);
         cardStackView.setLayoutManager(manager);
         cardStackView.setAdapter(adapter);
         cardStackView.setItemAnimator(new DefaultItemAnimator());
@@ -120,4 +128,10 @@ public class DashboardFragment extends Fragment {
         return items;
     }
 
+    @Override
+    public void setOnClick(SwipeAnimationSetting setting) {
+        manager.setSwipeAnimationSetting(setting);
+        cardStackView.swipe();
+        Toast.makeText(getActivity(), "Click Cancel", Toast.LENGTH_SHORT).show();
+    }
 }

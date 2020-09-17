@@ -56,12 +56,6 @@ public class CompassAdapter extends RecyclerView.Adapter<CompassAdapter.ViewHold
                 BottomSheetFragment bottomSheetDialog = BottomSheetFragment.newInstance();
                 bottomSheetDialog.show(((AppCompatActivity) context).getSupportFragmentManager(),"Bottom Sheet Dialog Fragment");
 
-                final int img = userCompasses.get(position).getImg();
-                final String nameUser = userCompasses.get(position).getName();
-
-                Intent intent = new Intent(context, BottomSheetFragment.class);
-                intent.putExtra("img_ava", img);
-                intent.putExtra("nameUser", nameUser);
             }
         });
 
