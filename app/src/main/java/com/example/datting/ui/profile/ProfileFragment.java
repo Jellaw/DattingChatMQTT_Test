@@ -1,20 +1,27 @@
 package com.example.datting.ui.profile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.bumptech.glide.Glide;
+import com.example.datting.EditAccountActivity;
 import com.example.datting.R;
+import com.example.datting.SettingActivity;
 
 public class ProfileFragment extends Fragment {
+    ImageView avatar;
+    TextView name;
+    TextView age;
+    ImageView setting_btn;
 
     private com.example.datting.ui.profile.ProfileViewModel profileViewModel;
 
@@ -23,13 +30,32 @@ public class ProfileFragment extends Fragment {
         profileViewModel =
                 ViewModelProviders.of(this).get(com.example.datting.ui.profile.ProfileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
-        final TextView textView = root.findViewById(R.id.text_profile);
-        profileViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        init(root);
+        return root;
+    }
+    private  void init(View root){
+
+
+        avatar = root.findViewById(R.id.avatar);
+        name = root.findViewById(R.id.name_profile);
+        age = root.findViewById(R.id.age_profile);
+        setting_btn = root.findViewById(R.id.setting_btn_profile);
+        Glide.with(getActivity())
+                .load(R.drawable.avt)
+                .into(avatar);
+
+        name.setText("Nam Anh, ");
+        age.setText("06");
+        setting_btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SettingActivity.class);
+                startActivity(intent);
             }
         });
-        return root;
+        final String acc_name = (String) name.getText();
+        Intent intent = new Intent(getContext(), EditAccountActivity.class);
+        intent.putExtra("name", acc_name);
+        getContext().startActivity(intent);
     }
 }

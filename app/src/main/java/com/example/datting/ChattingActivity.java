@@ -1,6 +1,7 @@
 package com.example.datting;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -34,7 +35,7 @@ public class ChattingActivity extends AppCompatActivity implements MqttCallback 
      ArrayList<UserMessage> messageList = new ArrayList<>();
      //=================================
      private static final String BROKER_URI = "tcp://broker.hivemq.com:1883";
-    private static final String TOPIC = "testtopic/1";
+    private static final String TOPIC = "testtopic/2";
     private static final int QOS = 2;
     // user name for the chat
     private static final String USER_NAME = Build.DEVICE;
@@ -48,12 +49,22 @@ public class ChattingActivity extends AppCompatActivity implements MqttCallback 
     private String message;
     Handler mHandler;
     Intent i;
+    ImageView back_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_chatting);
         avaUser = findViewById(R.id.avaUser);
         nameUser = findViewById(R.id.userName);
+        back_btn = findViewById(R.id.back_btn_chat);
+
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
         //=======RecycleView=====================================================
         mMessageRecycler = (RecyclerView) findViewById(R.id.messenger_view);
         LinearLayoutManager manager = new LinearLayoutManager(this);

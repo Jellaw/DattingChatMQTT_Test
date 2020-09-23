@@ -1,6 +1,8 @@
 package com.example.datting;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -15,9 +17,11 @@ public class HomeActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
         NavController navController = Navigation.findNavController(this, R.id.fragment_container);
         NavigationUI.setupWithNavController(navView, navController);
+
     }
 }

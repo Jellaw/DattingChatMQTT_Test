@@ -1,8 +1,6 @@
 package com.example.datting.ui.home.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.datting.ChattingActivity;
 import com.example.datting.R;
 import com.example.datting.ui.home.BottomSheetFragment;
 import com.example.datting.ui.home.Model.UserCompass;

@@ -18,4 +18,28 @@
     <string name="statusOnline">Online</string>
     <string name="statusOffline">Offline</string>
     <string name="batcap">Bắt gặp</string>
+    <string name="profile">Hồ sơ</string>
+    <string name="choose_image_profile">Chọn ảnh để xem hồ sơ của bạn</string>
+    <string name="buy_credit">Mua credit</string>
+    <string name="active_gold">Kích hoạt Dating Gold</string>
+    <string name="setting_tittle">Cài đặt</string>
+    <string name="policy">Quyền riêng tư</string>
+    <string name="account_security">Tài khoản bảo mật</string>
+    <string name="notification_setting">Thông báo</string>
+    <string name="About_us">Giới thiệu</string>
+    <string name="Support">Hỗ trợ</string>
+    <string name="Account">Tài khoản</string>
+    <string name="EditAccName">Họ tên</string>
+    <string name="DateOfBirth">Ngày sinh</string>
+    <string name="sex">Giới tính</string>
+    <string name="Male">Nam</string>
+    <string name="Female">Nữ</string>
+    <string name="Save">Lưu</string>
+
+
+
+
+
+
+
 </resources>

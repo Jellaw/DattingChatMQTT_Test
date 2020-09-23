@@ -29,25 +29,57 @@
             android:id="@+id/item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
             android:textColor="@android:color/white"
-            android:textSize="26sp"/>
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/item_age"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"/>
+            android:layout_gravity="center_horizontal">
 
-        <TextView
-            android:id="@+id/item_city"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/item_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginStart="3dp"
+                android:background="@drawable/sex_background"
+                android:gravity="center|center_horizontal">
+
+                <TextView
+                    android:id="@+id/item_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="7dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="3dp"
+                    app:srcCompat="@drawable/female" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -5,6 +5,7 @@
         <item name="colorPrimary">#D5E12565</item>
         <item name="colorPrimaryDark">#C9E91E63</item>
         <item name="colorAccent">#DFF82E73</item>
+
     </style>
 
 </resources>
