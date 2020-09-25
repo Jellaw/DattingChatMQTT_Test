@@ -11,11 +11,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.datting.ui.profile.ProfileFragment;
 
 public class EditAccountActivity extends AppCompatActivity {
     TextView hoten;
     TextView dob;
     TextView gioitinh;
+    TextView save_btn;
     EditText accName;
     EditText dobAcc;
     RadioButton male;
@@ -30,7 +34,6 @@ public class EditAccountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_account);
         init();
         i = getIntent();
-
         accName.setText(i.getStringExtra("name"));
 
         accName.setOnTouchListener(new View.OnTouchListener() {
@@ -55,6 +58,17 @@ public class EditAccountActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+        save_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //truyen name_edited sang fragment Profile
+                Intent intent=new Intent();
+                intent.putExtra("ten",accName.getText().toString());
+                setResult(999,intent);
+                //==================================================
+                finish();
+            }
+        });
     }
     private void init(){
         hoten = findViewById(R.id.hoten);
@@ -66,5 +80,6 @@ public class EditAccountActivity extends AppCompatActivity {
         male = findViewById(R.id.male);
         female = findViewById(R.id.female);
         back_btn = findViewById(R.id.back_btn_acc);
+        save_btn = findViewById(R.id.save_btn);
     }
 }

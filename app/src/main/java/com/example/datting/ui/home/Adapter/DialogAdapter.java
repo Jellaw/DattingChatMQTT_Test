@@ -41,6 +41,21 @@ public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
             .load(userDialogs.get(position).getImage())
             .centerCrop()
             .into(holder.image);
+    Glide.with(context)
+            .load(R.drawable.cancer)
+            .override(100,100)
+            .skipMemoryCache(true)
+            .into(holder.imgX);
+    Glide.with(context)
+            .load(R.drawable.imgpsh_fullsize_anim)
+            .override(100,100)
+            .skipMemoryCache(true)
+            .into(holder.imgT);
+    Glide.with(context)
+            .load(R.drawable.imgpsh_fullsize)
+            .override(100,100)
+            .skipMemoryCache(true)
+            .into(holder.imgTT);
 
     holder.name.setText(userDialogs.get(position).getName());
     holder.age.setText(userDialogs.get(position).getAge());
@@ -53,7 +68,7 @@ public int getItemCount() {
         }
 
 public class ViewHolder extends RecyclerView.ViewHolder {
-    ImageView image;
+    ImageView image,imgX, imgT, imgTT;
     TextView name, age, address;
 
     ViewHolder(@NonNull View itemView) {
@@ -62,6 +77,9 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         name = itemView.findViewById(R.id.dialog_name);
         age = itemView.findViewById(R.id.dialog_age);
         address = itemView.findViewById(R.id.dialog_city);
+        imgX = itemView.findViewById(R.id.cancelBtn);
+        imgT = itemView.findViewById(R.id.likeBtn);
+        imgTT = itemView.findViewById(R.id.loveBtn);
     }
 
     }

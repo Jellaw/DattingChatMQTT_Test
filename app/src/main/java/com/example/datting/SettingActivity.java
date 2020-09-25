@@ -1,5 +1,6 @@
 package com.example.datting;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,8 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SettingActivity extends AppCompatActivity {
+
     ImageView back_setting_btn;
     TextView policy;
     TextView acc_security;
@@ -34,13 +37,13 @@ public class SettingActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
         acc_security.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 acc_security.setBackgroundColor(Color.parseColor("#80EDEAEA"));
-                Intent intent = new Intent(SettingActivity.this, EditAccountActivity.class);
-                startActivity(intent);
             }
         });
     }
+
 }

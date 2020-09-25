@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -18,6 +19,7 @@ import com.example.datting.R;
 import com.example.datting.SettingActivity;
 
 public class ProfileFragment extends Fragment {
+    private static final int CODE_SETTING = 100;
     ImageView avatar;
     TextView name;
     TextView age;
@@ -43,19 +45,33 @@ public class ProfileFragment extends Fragment {
         Glide.with(getActivity())
                 .load(R.drawable.avt)
                 .into(avatar);
-
-        name.setText("Nam Anh, ");
+        name.setText("Nam Anh");
         age.setText("06");
+        name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), EditAccountActivity.class);
+                final String acc_name = (String) name.getText();
+                intent.putExtra("name", acc_name);
+                startActivityForResult(intent, CODE_SETTING);
+            }
+        });
         setting_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), SettingActivity.class);
-                startActivity(intent);
+                getActivity().startActivity(intent);
             }
         });
-        final String acc_name = (String) name.getText();
-        Intent intent = new Intent(getContext(), EditAccountActivity.class);
-        intent.putExtra("name", acc_name);
-        getContext().startActivity(intent);
+
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==CODE_SETTING){
+            if (resultCode==999){
+                name.setText(data.getStringExtra("ten"));
+            }
+        }
     }
 }

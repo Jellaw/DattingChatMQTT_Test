@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00FFFFFF"
     tools:context=".EditAccountActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,7 +15,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -36,6 +36,7 @@
             android:id="@+id/back_btn_acc"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:background="#00FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -109,27 +110,41 @@
             android:text="@string/sex" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sex_choose"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <RadioButton
-                android:id="@+id/male"
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Male"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <RadioButton
-                android:id="@+id/female"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Female"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/male"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/Male"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioButton
+                    android:id="@+id/female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:text="@string/Female"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/male"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </RadioGroup>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
