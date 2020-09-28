@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.bumptech.glide.Glide;
 import com.example.datting.EditAccountActivity;
+import com.example.datting.MyInfomationActivity;
 import com.example.datting.R;
 import com.example.datting.SettingActivity;
 
@@ -24,6 +25,7 @@ public class ProfileFragment extends Fragment {
     TextView name;
     TextView age;
     ImageView setting_btn;
+    TextView loadInfo;
 
     private com.example.datting.ui.profile.ProfileViewModel profileViewModel;
 
@@ -37,7 +39,7 @@ public class ProfileFragment extends Fragment {
     }
     private  void init(View root){
 
-
+        loadInfo = root.findViewById(R.id.my_info);
         avatar = root.findViewById(R.id.avatar);
         name = root.findViewById(R.id.name_profile);
         age = root.findViewById(R.id.age_profile);
@@ -60,6 +62,17 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), SettingActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
+        loadInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MyInfomationActivity.class);
+                final String acc_name = (String) name.getText();
+                final String acc_age = (String) age.getText();
+                intent.putExtra("name", acc_name);
+                intent.putExtra("age", acc_age);
                 getActivity().startActivity(intent);
             }
         });

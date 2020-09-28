@@ -43,6 +43,10 @@ public class CompassAdapter extends RecyclerView.Adapter<CompassAdapter.ViewHold
                     .load(userCompasses.get(position).getImg())
                     .centerCrop()
                     .into(holder.image_view);
+        Glide.with(context)
+                .load(userCompasses.get(position).getImgChamxanh())
+                .centerCrop()
+                .into(holder.cim_chamXanh);
 
         holder.text_view.setText(userCompasses.get(position).getName());
 
@@ -64,7 +68,7 @@ public class CompassAdapter extends RecyclerView.Adapter<CompassAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        CircleImageView image_view;
+        CircleImageView image_view, cim_chamXanh;
         TextView text_view;
         LinearLayout ll_item;
 
@@ -73,6 +77,7 @@ public class CompassAdapter extends RecyclerView.Adapter<CompassAdapter.ViewHold
             image_view = itemView.findViewById(R.id.image_view);
             text_view = itemView.findViewById(R.id.text_view);
             ll_item = itemView.findViewById(R.id.ll_item);
+            cim_chamXanh = itemView.findViewById(R.id.cim_chamXanh);
         }
 
     }

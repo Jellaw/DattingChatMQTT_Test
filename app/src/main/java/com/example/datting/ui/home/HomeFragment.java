@@ -45,17 +45,17 @@ public class HomeFragment extends Fragment {
        gv_listUserCompass.setAdapter(userCompassAdapter);
    }
     private void addUserCompass() {
-        userCompasses.add(new UserCompass(R.drawable.avt, "1"));
-        userCompasses.add(new UserCompass(R.drawable.avt2, "2"));
-        userCompasses.add(new UserCompass(R.drawable.avt2, "3"));
-        userCompasses.add(new UserCompass(R.drawable.avt, "4"));
-        userCompasses.add(new UserCompass(R.drawable.avt2, "5"));
-        userCompasses.add(new UserCompass(R.drawable.avt2, "6"));
-        userCompasses.add(new UserCompass(R.drawable.avt2, "7"));
-        userCompasses.add(new UserCompass(R.drawable.avt, "8"));
-        userCompasses.add(new UserCompass(R.drawable.avt2, "9"));
-        userCompasses.add(new UserCompass(R.drawable.avt2, "10"));
-        userCompasses.add(new UserCompass(R.drawable.avt2, "11"));
-        userCompasses.add(new UserCompass(R.drawable.avt, "12"));
+        userCompasses.add(new UserCompass(R.drawable.avt, R.drawable.cham_xanh,"1"));
+        userCompasses.add(new UserCompass(R.drawable.avt2,R.drawable.cham_xanh, "2"));
+        userCompasses.add(new UserCompass(R.drawable.avt2, R.drawable.cham_xanh,"3"));
+        userCompasses.add(new UserCompass(R.drawable.avt, R.drawable.cham_xanh,"4"));
+        userCompasses.add(new UserCompass(R.drawable.avt2, R.drawable.cham_xanh,"5"));
+        userCompasses.add(new UserCompass(R.drawable.avt2, R.drawable.cham_xanh,"6"));
+        userCompasses.add(new UserCompass(R.drawable.avt2, R.drawable.cham_xanh,"7"));
+        userCompasses.add(new UserCompass(R.drawable.avt, R.drawable.cham_xanh,"8"));
+        userCompasses.add(new UserCompass(R.drawable.avt2,R.drawable.cham_xanh, "9"));
+        userCompasses.add(new UserCompass(R.drawable.avt2, R.drawable.cham_xanh,"10"));
+        userCompasses.add(new UserCompass(R.drawable.avt2,R.drawable.cham_xanh,"11"));
+        userCompasses.add(new UserCompass(R.drawable.avt, R.drawable.cham_xanh,"12"));
     }
 }

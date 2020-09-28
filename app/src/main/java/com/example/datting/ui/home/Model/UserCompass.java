@@ -1,11 +1,12 @@
 package com.example.datting.ui.home.Model;
 
 public class UserCompass {
-    int img;
+    int img, imgChamxanh;
     String name;
 
-    public UserCompass(int img, String name) {
+    public UserCompass(int img, int imgChamxanh, String name) {
         this.img = img;
+        this.imgChamxanh = imgChamxanh;
         this.name = name;
     }
 
@@ -23,5 +24,13 @@ public class UserCompass {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getImgChamxanh() {
+        return imgChamxanh;
+    }
+
+    public void setImgChamxanh(int imgChamxanh) {
+        this.imgChamxanh = imgChamxanh;
     }
 }

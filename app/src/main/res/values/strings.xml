@@ -35,11 +35,6 @@
     <string name="Male">Nam</string>
     <string name="Female">Nữ</string>
     <string name="Save">Lưu</string>
-
-
-
-
-
-
+    <string name="my_info_head">Thông tin cá nhân</string>
 
 </resources>
