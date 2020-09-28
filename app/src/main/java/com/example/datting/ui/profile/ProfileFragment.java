@@ -1,7 +1,10 @@
 package com.example.datting.ui.profile;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +22,9 @@ import com.example.datting.MyInfomationActivity;
 import com.example.datting.R;
 import com.example.datting.SettingActivity;
 
+
+import static android.app.Activity.RESULT_OK;
+
 public class ProfileFragment extends Fragment {
     private static final int CODE_SETTING = 100;
     ImageView avatar;
@@ -26,6 +32,9 @@ public class ProfileFragment extends Fragment {
     TextView age;
     ImageView setting_btn;
     TextView loadInfo;
+    private static final int PICK_IMAGE = 1;
+    Uri imageUri;
+
 
     private com.example.datting.ui.profile.ProfileViewModel profileViewModel;
 
@@ -38,17 +47,17 @@ public class ProfileFragment extends Fragment {
         return root;
     }
     private  void init(View root){
-
         loadInfo = root.findViewById(R.id.my_info);
         avatar = root.findViewById(R.id.avatar);
         name = root.findViewById(R.id.name_profile);
         age = root.findViewById(R.id.age_profile);
         setting_btn = root.findViewById(R.id.setting_btn_profile);
         Glide.with(getActivity())
-                .load(R.drawable.avt)
+                .load(R.drawable.avatar)
                 .into(avatar);
         name.setText("Nam Anh");
         age.setText("06");
+        //=================set action====================================
         name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,15 +85,29 @@ public class ProfileFragment extends Fragment {
                 getActivity().startActivity(intent);
             }
         });
+        avatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+                startActivityForResult(gallery, PICK_IMAGE);
+            }
+        });
 
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode==CODE_SETTING){
-            if (resultCode==999){
+        if (requestCode==CODE_SETTING) {
+            if (resultCode == 999) {
                 name.setText(data.getStringExtra("ten"));
             }
+        }
+        if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
+            imageUri = data.getData();
+            Glide.with(getActivity())
+                    .load(imageUri)
+                    .into(avatar);
         }
     }
 }

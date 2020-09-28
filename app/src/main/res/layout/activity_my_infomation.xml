@@ -32,7 +32,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/back_btn_setting"
+            android:id="@+id/back_btn_info"
             android:layout_width="40dp"
             android:layout_height="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -137,7 +137,7 @@
                     app:srcCompat="@drawable/addimage" />
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/loadImage1"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:background="@drawable/select_image"
@@ -223,7 +223,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
-                android:text="Tôi ở đây để?"
+                android:text="@string/im_here_for"
                 android:textColor="#2C2C2C"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -234,7 +234,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:paddingBottom="5dp"
-                android:text="Thêm"
+                android:text="@string/add"
                 android:textColor="#ff69b4"
                 android:textSize="15dp" />
 
@@ -243,7 +243,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
-                android:text="Công việc và học vấn"
+                android:text="@string/Job_and_study"
                 android:textColor="#2C2C2C"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -254,7 +254,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:paddingBottom="5dp"
-                android:text="Thêm"
+                android:text="@string/add"
                 android:textColor="#ff69b4"
                 android:textSize="15dp" />
 
@@ -263,7 +263,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
-                android:text="Về bạn"
+                android:text="@string/about_you"
                 android:textColor="#2C2C2C"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -275,7 +275,7 @@
                 android:layout_marginLeft="15dp"
                 android:inputType="textMultiLine"
                 android:paddingBottom="5dp"
-                android:text="Cho chúng tôi biết thêm về bạn..."
+                android:text="@string/givememoreInfo"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
@@ -305,7 +305,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="75dp"
                     android:layout_marginLeft="75dp"
-                    android:text="Chiều cao"
+                    android:text="@string/Height"
                     android:textColor="#2C2C2C"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -360,7 +360,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="75dp"
                     android:layout_marginLeft="75dp"
-                    android:text="Cân nặng"
+                    android:text="@string/Weight"
                     android:textColor="#2C2C2C"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -415,7 +415,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="75dp"
                     android:layout_marginLeft="75dp"
-                    android:text="Hút thuốc"
+                    android:text="@string/Smoke"
                     android:textColor="#2C2C2C"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -469,7 +469,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="75dp"
                     android:layout_marginLeft="75dp"
-                    android:text="Rượu bia"
+                    android:text="@string/Acohol"
                     android:textColor="#2C2C2C"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -524,7 +524,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="75dp"
                     android:layout_marginLeft="75dp"
-                    android:text="Ngôn ngữ"
+                    android:text="@string/Language"
                     android:textColor="#2C2C2C"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -579,7 +579,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="75dp"
                     android:layout_marginLeft="75dp"
-                    android:text="Nơi sống"
+                    android:text="@string/Place"
                     android:textColor="#2C2C2C"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -634,7 +634,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="75dp"
                     android:layout_marginLeft="75dp"
-                    android:text="Hôn nhân"
+                    android:text="@string/Marry"
                     android:textColor="#2C2C2C"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -689,7 +689,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="75dp"
                     android:layout_marginLeft="75dp"
-                    android:text="Tôn giáo"
+                    android:text="@string/Culture"
                     android:textColor="#2C2C2C"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -731,7 +731,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="25dp"
-                android:text="Mạng xã hội"
+                android:text="@string/Social_link"
                 android:textColor="#2C2C2C"
                 android:textSize="25dp"
                 android:textStyle="bold" />

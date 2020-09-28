@@ -36,5 +36,22 @@
     <string name="Female">Nữ</string>
     <string name="Save">Lưu</string>
     <string name="my_info_head">Thông tin cá nhân</string>
+    <string name="im_here_for">Tôi ở đây để</string>
+    <string name="add">Thêm</string>
+    <string name="Job_and_study">Công việc và học vấn</string>
+    <string name="about_you">Về bạn</string>
+    <string name="givememoreInfo">Cho chúng tôi biết thêm về bạn...</string>
+    <string name="Height">Chiều cao</string>
+    <string name="Weight">Cân nặng</string>
+    <string name="Smoke">Hút thuốc</string>
+    <string name="Acohol">Rượu bia</string>
+    <string name="Language">Ngôn ngữ</string>
+    <string name="Place">Nơi sống</string>
+    <string name="Marry">Hôn nhân</string>
+    <string name="Culture">Tôn giáo</string>
+    <string name="Social_link">Mạng xã hội</string>
+    <string name="connect">Kết nối</string>
+    <string name="setName">Đặt tên</string>
+    <string name="setAge">tuổi</string>
 
 </resources>
