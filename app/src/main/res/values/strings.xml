@@ -53,5 +53,9 @@
     <string name="connect">Kết nối</string>
     <string name="setName">Đặt tên</string>
     <string name="setAge">tuổi</string>
+    <string name="findnewfriend">Tìm bạn mới</string>
+    <string name="toChat">Để chat</string>
+    <string name="findAcloseFriend">Tìm một người bạn thân</string>
+    <string name="findmyTrueLove">Tìm một mối quan hệ nghiêm túc</string>
 
 </resources>

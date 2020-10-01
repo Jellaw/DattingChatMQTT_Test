@@ -11,4 +11,11 @@
         <item name="android:statusBarColor">#FFFFFF</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
+    <!--bo goc bottomDialog-->
+    <style name="BottomSheetTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle"> @style/hereFor</item>
+    </style>
+    <style name="hereFor" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background" >#00FFFFFF</item>
+    </style>
 </resources>

@@ -1,7 +1,6 @@
 package com.example.datting.ui.profile;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -17,10 +16,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.bumptech.glide.Glide;
-import com.example.datting.EditAccountActivity;
-import com.example.datting.MyInfomationActivity;
+import com.example.datting.Activity.ProfileActivity.EditAccountActivity;
+import com.example.datting.Activity.ProfileActivity.MyInfomationActivity;
 import com.example.datting.R;
-import com.example.datting.SettingActivity;
+import com.example.datting.Activity.ProfileActivity.SettingActivity;
 
 
 import static android.app.Activity.RESULT_OK;

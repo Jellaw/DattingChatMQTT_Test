@@ -1,4 +1,4 @@
-package com.example.datting;
+package com.example.datting.Activity.ProfileActivity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.datting.R;
 
 public class SettingActivity extends AppCompatActivity {
 

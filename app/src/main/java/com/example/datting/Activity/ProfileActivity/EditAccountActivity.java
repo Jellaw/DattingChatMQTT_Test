@@ -1,4 +1,4 @@
-package com.example.datting;
+package com.example.datting.Activity.ProfileActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +13,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.datting.R;
 import com.example.datting.ui.profile.ProfileFragment;
 
 public class EditAccountActivity extends AppCompatActivity {

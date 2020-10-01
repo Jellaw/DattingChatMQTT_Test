@@ -1,4 +1,4 @@
-package com.example.datting;
+package com.example.datting.Activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.datting.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity  {

@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,19 +16,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MyInfomationActivity"></activity>
-        <activity android:name=".EditAccountActivity"></activity>
+        <activity android:name=".Activity.ProfileActivity.JobAndStudy"></activity>
         <activity
-            android:name=".SettingActivity"
-            android:theme="@style/AppTheme1"></activity>
+            android:name=".Activity.ProfileActivity.MyInfomationActivity"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".Activity.ProfileActivity.EditAccountActivity"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".Activity.ProfileActivity.SettingActivity"
+            android:theme="@style/AppTheme1" />
         <activity
             android:name=".ChattingActivity"
             android:theme="@style/AppTheme1" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".Activity.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme1" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
