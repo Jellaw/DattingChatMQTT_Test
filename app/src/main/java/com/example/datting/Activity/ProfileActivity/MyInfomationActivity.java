@@ -25,7 +25,7 @@ public class MyInfomationActivity extends AppCompatActivity {
     TextView age;
     ImageView back_btn,img1,img2,img3,img4,img5,img6;
     Intent i;
-    TextView hereFor;
+    TextView hereFor,addJob,addMySelf;
     RadioGroup choose;
     RadioButton a,b,c,d;
 
@@ -33,27 +33,12 @@ public class MyInfomationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_infomation);
-//================init==================================
-        name = findViewById(R.id.tv_name);
-        age = findViewById(R.id.tv_age);
-        back_btn=findViewById(R.id.back_btn_info);
-        img1 = findViewById(R.id.loadImage1);
-        img2 = findViewById(R.id.imageView);
-        img3 = findViewById(R.id.imageView2);
-        img4 = findViewById(R.id.imageView4);
-        img5 = findViewById(R.id.imageView5);
-        img6 = findViewById(R.id.imageView6);
-        hereFor = findViewById(R.id.hereForDialog);
-        choose = findViewById(R.id.radioGroup);
-        a = findViewById(R.id.radioButton);
-        b= findViewById(R.id.radioButton2);
-        c= findViewById(R.id.radioButton3);
-        d=findViewById(R.id.radioButton4);
-//================get info name/age=====================
+        init();
+        //================get info name/age=====================
         i = getIntent();
         name.setText(i.getStringExtra("name"));
         age.setText(i.getStringExtra("age"));
-//=================set action===========================
+        //=================set action===========================
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,7 +87,7 @@ public class MyInfomationActivity extends AppCompatActivity {
                 startActivityForResult(gallery, 6);
             }
         });
-        //set dialog ToiODayDe======================================================================
+        //====================set dialog ToiODayDe======================================================================
         hereFor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -115,7 +100,22 @@ public class MyInfomationActivity extends AppCompatActivity {
             bottomSheetDialog.show();
             }
         });
-//======================================================
+        //==============add company and job========================================
+        addJob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MyInfomationActivity.this, JobAndStudy.class);
+               startActivity(intent);
+            }
+        });
+        //===============add introduce myself=====================================
+        addMySelf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MyInfomationActivity.this, AboutYouActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -168,5 +168,25 @@ public class MyInfomationActivity extends AppCompatActivity {
                     .centerCrop()
                     .into(img6);
         }
+    }
+    private void init(){
+        //================init==================================
+        name = findViewById(R.id.tv_name);
+        age = findViewById(R.id.tv_age);
+        back_btn=findViewById(R.id.back_btn_info);
+        img1 = findViewById(R.id.loadImage1);
+        img2 = findViewById(R.id.imageView);
+        img3 = findViewById(R.id.imageView2);
+        img4 = findViewById(R.id.imageView4);
+        img5 = findViewById(R.id.imageView5);
+        img6 = findViewById(R.id.imageView6);
+        hereFor = findViewById(R.id.hereForDialog);
+        choose = findViewById(R.id.radioGroup);
+        a = findViewById(R.id.radioButton);
+        b= findViewById(R.id.radioButton2);
+        c= findViewById(R.id.radioButton3);
+        d=findViewById(R.id.radioButton4);
+        addJob=findViewById(R.id.add_job);
+        addMySelf=findViewById(R.id.add_mySefl);
     }
 }

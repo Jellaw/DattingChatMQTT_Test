@@ -62,5 +62,7 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     //khung anh bo tron
     implementation 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
+    //delete at end of edit text
+    implementation 'com.github.Cielsk:clearable-edittext:0.0.5'
 
 }

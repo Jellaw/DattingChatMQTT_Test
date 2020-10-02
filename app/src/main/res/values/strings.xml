@@ -51,11 +51,14 @@
     <string name="Culture">Tôn giáo</string>
     <string name="Social_link">Mạng xã hội</string>
     <string name="connect">Kết nối</string>
-    <string name="setName">Đặt tên</string>
-    <string name="setAge">tuổi</string>
     <string name="findnewfriend">Tìm bạn mới</string>
     <string name="toChat">Để chat</string>
     <string name="findAcloseFriend">Tìm một người bạn thân</string>
     <string name="findmyTrueLove">Tìm một mối quan hệ nghiêm túc</string>
+    <string name="companyName">Tên công ty</string>
+    <string name="Job">Nghề nghiệp</string>
+    <string name="textAboutYou">Điều gì làm bạn nổi bật? Càng nhiều thông tin bạn càng trở nên thu hút.</string>
+    <string name="introduceYourSelf">Giới thiệu về bạn...</string>
+
 
 </resources>

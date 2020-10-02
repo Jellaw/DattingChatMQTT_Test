@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.ProfileActivity.JobAndStudy"></activity>
+        <activity android:name=".Activity.ProfileActivity.AboutYouActivity"></activity>
+        <activity android:name=".Activity.ProfileActivity.JobAndStudy" />
         <activity
             android:name=".Activity.ProfileActivity.MyInfomationActivity"
             android:theme="@style/AppTheme1" />
