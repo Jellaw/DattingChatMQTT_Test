@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -25,9 +26,10 @@ public class MyInfomationActivity extends AppCompatActivity {
     TextView age;
     ImageView back_btn,img1,img2,img3,img4,img5,img6;
     Intent i;
-    TextView hereFor,addJob,addMySelf;
+    TextView hereFor,addJob,addMySelf,weight_info,height_info,drink_info;
     RadioGroup choose;
     RadioButton a,b,c,d;
+    RelativeLayout weight,height,drink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,6 +118,27 @@ public class MyInfomationActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        weight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MyInfomationActivity.this, WeightActivity.class);
+                startActivityForResult(intent,200);
+            }
+        });
+        height.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MyInfomationActivity.this, HeightActivity.class);
+                startActivityForResult(intent,100);
+            }
+        });
+        drink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MyInfomationActivity.this, DrinkActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -168,6 +191,16 @@ public class MyInfomationActivity extends AppCompatActivity {
                     .centerCrop()
                     .into(img6);
         }
+        if (requestCode==200) {
+            if (resultCode == 200) {
+                weight_info.setText(data.getStringExtra("weight"));
+            }
+        }
+        if (requestCode==100) {
+            if (resultCode == 100) {
+                height_info.setText(data.getStringExtra("height"));
+            }
+        }
     }
     private void init(){
         //================init==================================
@@ -188,5 +221,10 @@ public class MyInfomationActivity extends AppCompatActivity {
         d=findViewById(R.id.radioButton4);
         addJob=findViewById(R.id.add_job);
         addMySelf=findViewById(R.id.add_mySefl);
+        weight=findViewById(R.id.rltl_canNang);
+        weight_info=findViewById(R.id.tv_canNang);
+        height=findViewById(R.id.rltl_chieuCao);
+        height_info=findViewById(R.id.tv_chieuCao);
+        drink=findViewById(R.id.rltl_ruouBia);
     }
 }

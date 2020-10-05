@@ -16,11 +16,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.ProfileActivity.AboutYouActivity"
-            android:theme="@style/AppTheme1"/>
-
-        <activity android:name=".Activity.ProfileActivity.JobAndStudy"
-            android:theme="@style/AppTheme1"/>
+        <activity android:name=".Activity.ProfileActivity.DrinkActivity"></activity>
+        <activity android:name=".Activity.ProfileActivity.HeightActivity" />
+        <activity
+            android:name=".Activity.ProfileActivity.AboutYouActivity"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".Activity.ProfileActivity.WeightActivity"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".Activity.ProfileActivity.JobAndStudy"
+            android:theme="@style/AppTheme1" />
         <activity
             android:name=".Activity.ProfileActivity.MyInfomationActivity"
             android:theme="@style/AppTheme1" />

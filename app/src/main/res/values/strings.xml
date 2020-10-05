@@ -59,6 +59,11 @@
     <string name="Job">Nghề nghiệp</string>
     <string name="textAboutYou">Điều gì làm bạn nổi bật? Càng nhiều thông tin bạn càng trở nên thu hút.</string>
     <string name="introduceYourSelf">Giới thiệu về bạn...</string>
+    <string name="Drink1">Thường xuyên uống rượu bia</string>
+    <string name="Drink2">Tôi thích rượu bia</string>
+    <string name="Drink3">Không uống rượu bia</string>
+    <string name="Drink4">Tôi ghét rượu bia</string>
+    <string name="Drink5">Không hiển thị</string>
 
 
 </resources>
