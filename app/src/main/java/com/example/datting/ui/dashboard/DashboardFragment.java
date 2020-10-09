@@ -96,7 +96,7 @@ public class DashboardFragment extends Fragment implements ClickReaction {
         manager.setSwipeThreshold(0.3f);
         manager.setMaxDegree(20.0f);
         manager.setDirections(Direction.HORIZONTAL);
-        manager.setCanScrollVertical(false);
+        manager.setCanScrollVertical(true);
         manager.setOverlayInterpolator(new LinearInterpolator());
         adapter = new CardStackAdapter(addList(), getActivity(),this);
         cardStackView.setLayoutManager(manager);
@@ -134,5 +134,17 @@ public class DashboardFragment extends Fragment implements ClickReaction {
         manager.setSwipeAnimationSetting(setting);
         cardStackView.swipe();
         Toast.makeText(getActivity(), "Click Cancel", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void setOnImageClick(int k) {
+        if(k%2==1){
+            manager.setCanScrollVertical(false);
+            manager.setCanScrollHorizontal(false);
+        }
+        if(k%2==0){
+            manager.setCanScrollVertical(false);
+            manager.setCanScrollHorizontal(true);
+        }
     }
 }

@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.ProfileActivity.DrinkActivity"></activity>
+        <activity android:name=".Swipe_dashboard"></activity>
+        <activity android:name=".Activity.ProfileActivity.DrinkActivity" />
         <activity android:name=".Activity.ProfileActivity.HeightActivity" />
         <activity
             android:name=".Activity.ProfileActivity.AboutYouActivity"

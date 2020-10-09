@@ -6,14 +6,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.datting.R;
 import com.example.datting.ui.dashboard.Model.ItemModel;
+import com.google.android.material.appbar.AppBarLayout;
 import com.yuyakaido.android.cardstackview.Direction;
 import com.yuyakaido.android.cardstackview.Duration;
 import com.yuyakaido.android.cardstackview.SwipeAnimationSetting;
@@ -25,7 +28,7 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
     private List<ItemModel> items;
     private Context context;
     private ClickReaction clickReaction;
-
+    private int k=0;
 
     public CardStackAdapter(List<ItemModel> items, Context context, ClickReaction clickReaction) {
         this.items = items;
@@ -42,28 +45,68 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         holder.setData(items.get(position));
         holder.imgX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                k=k+2;
                 SwipeAnimationSetting setting = new SwipeAnimationSetting.Builder()
                         .setDirection(Direction.Left)
                         .setDuration(Duration.Normal.duration)
                         .setInterpolator(new AccelerateInterpolator())
                         .build();
                 clickReaction.setOnClick(setting);
+                clickReaction.setOnImageClick(k);
             }
         });
         holder.imgTT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                k=k+2;
                 SwipeAnimationSetting setting = new SwipeAnimationSetting.Builder()
                         .setDirection(Direction.Right)
                         .setDuration(Duration.Normal.duration)
                         .setInterpolator(new AccelerateInterpolator())
                         .build();
                 clickReaction.setOnClick(setting);
+                clickReaction.setOnImageClick(k);
+            }
+        });
+        holder.image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                k++;
+                if(k%2==1) {
+                    holder.name.setVisibility(View.INVISIBLE);
+                    holder.city_sex.setVisibility(View.INVISIBLE);
+                    CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) holder.appBarLayout.getLayoutParams();
+                    AppBarLayout.Behavior behavior = (AppBarLayout.Behavior) params.getBehavior();
+                    behavior.setDragCallback(new AppBarLayout.Behavior.DragCallback() {
+                        @Override
+                        public boolean canDrag(@NonNull AppBarLayout appBarLayout) {
+                            return true;
+                        }
+                    });
+                }
+                if(k%2==0){
+                    holder.name.setVisibility(View.VISIBLE);
+                    holder.city_sex.setVisibility(View.VISIBLE);
+                    //=============set image in cardview when click=============================================
+                    CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) holder.appBarLayout.getLayoutParams();
+                    AppBarLayout.Behavior behavior = (AppBarLayout.Behavior) params.getBehavior();
+                    behavior.setDragCallback(new AppBarLayout.Behavior.DragCallback() {
+                        @Override
+                        public boolean canDrag(@NonNull AppBarLayout appBarLayout) {
+                            return false;
+                        }
+                    });
+                    //==============================================================================================
+                }
+                clickReaction.setOnImageClick(k);
+                holder.name2.setText(holder.name.getText());
+                holder.age2.setText(holder.age.getText());
+                holder.address2.setText(holder.address.getText());
             }
         });
     }
@@ -75,7 +118,9 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
 
     class ViewHolder extends RecyclerView.ViewHolder{
         ImageView image, imgX, imgT, imgTT;
-        TextView name, age, address;
+        TextView name, age, address,name2,age2,address2;
+        LinearLayout city_sex;
+        AppBarLayout appBarLayout;
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.item_image);
@@ -85,7 +130,11 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
             imgX = itemView.findViewById(R.id.cancelBtn);
             imgT = itemView.findViewById(R.id.likeBtn);
             imgTT = itemView.findViewById(R.id.loveBtn);
-
+            city_sex=itemView.findViewById(R.id.city_and_sex);
+            appBarLayout=itemView.findViewById(R.id.app_bar_layout);
+            name2=itemView.findViewById(R.id.item_name2);
+            age2=itemView.findViewById(R.id.item_age2);
+            address2=itemView.findViewById(R.id.item_city2);
         }
 
         void setData(ItemModel data) {
