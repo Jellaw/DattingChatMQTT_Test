@@ -2,6 +2,7 @@ package com.example.datting.Activity.ProfileActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -41,6 +42,15 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 acc_security.setBackgroundColor(Color.parseColor("#80EDEAEA"));
+                new CountDownTimer(500, 1000) {
+                    @Override
+                    public void onTick(long l) {
+                    }
+                    public void onFinish() {
+                        acc_security.setBackgroundColor(Color.parseColor("#FFFDFBFB"));
+                    }
+                }.start();
+
             }
         });
     }
