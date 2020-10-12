@@ -50,7 +50,6 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
         holder.imgX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                k=k+2;
                 SwipeAnimationSetting setting = new SwipeAnimationSetting.Builder()
                         .setDirection(Direction.Left)
                         .setDuration(Duration.Normal.duration)
@@ -63,7 +62,6 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
         holder.imgTT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                k=k+2;
                 SwipeAnimationSetting setting = new SwipeAnimationSetting.Builder()
                         .setDirection(Direction.Right)
                         .setDuration(Duration.Normal.duration)
@@ -157,6 +155,7 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
                     .override(100,100)
                     .skipMemoryCache(true)
                     .into(imgTT);
+
             name.setText(data.getName());
             age.setText(data.getAge());
             address.setText(data.getAddress());

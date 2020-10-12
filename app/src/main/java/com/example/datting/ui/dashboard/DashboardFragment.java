@@ -143,7 +143,7 @@ public class DashboardFragment extends Fragment implements ClickReaction {
             manager.setCanScrollHorizontal(false);
         }
         if(k%2==0){
-            manager.setCanScrollVertical(false);
+            manager.setCanScrollVertical(true);
             manager.setCanScrollHorizontal(true);
         }
     }
