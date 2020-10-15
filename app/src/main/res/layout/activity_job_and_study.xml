@@ -82,7 +82,8 @@
             android:layout_height="wrap_content"
             android:height="50dp"
             android:gravity="bottom"
-            android:text="@string/companyName" />
+            android:text="@string/companyName"
+            android:textColor="#E3608C" />
 
         <com.cielyang.android.clearableedittext.ClearableEditText
             android:id="@+id/companyText"

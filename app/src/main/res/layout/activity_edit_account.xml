@@ -73,7 +73,8 @@
             android:layout_height="wrap_content"
             android:height="50dp"
             android:gravity="bottom"
-            android:text="@string/EditAccName" />
+            android:text="@string/EditAccName"
+            android:textColor="#E3608C" />
 
         <EditText
             android:id="@+id/nameText"

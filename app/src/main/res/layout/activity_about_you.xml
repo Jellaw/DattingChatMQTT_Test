@@ -102,7 +102,7 @@
         app:layout_constraintGuide_percent="0.96" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/introduce"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#C5C3C3"

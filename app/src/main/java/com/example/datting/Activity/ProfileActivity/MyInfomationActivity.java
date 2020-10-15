@@ -26,7 +26,7 @@ public class MyInfomationActivity extends AppCompatActivity {
     TextView age;
     ImageView back_btn,img1,img2,img3,img4,img5,img6;
     Intent i;
-    TextView hereFor,addJob,addMySelf,weight_info,height_info,drink_info;
+    TextView hereFor,addJob,addMySelf,weight_info,height_info,add_mySefl;
     RadioGroup choose;
     RadioButton a,b,c,d;
     RelativeLayout weight,height,drink;
@@ -115,7 +115,7 @@ public class MyInfomationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MyInfomationActivity.this, AboutYouActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent,111);
             }
         });
         weight.setOnClickListener(new View.OnClickListener() {
@@ -201,6 +201,11 @@ public class MyInfomationActivity extends AppCompatActivity {
                 height_info.setText(data.getStringExtra("height"));
             }
         }
+        if (requestCode==111) {
+            if (resultCode == 111) {
+                add_mySefl.setText(data.getStringExtra("gioithieu"));
+            }
+        }
     }
     private void init(){
         //================init==================================
@@ -226,5 +231,6 @@ public class MyInfomationActivity extends AppCompatActivity {
         height=findViewById(R.id.rltl_chieuCao);
         height_info=findViewById(R.id.tv_chieuCao);
         drink=findViewById(R.id.rltl_ruouBia);
+        add_mySefl=findViewById(R.id.add_mySefl);
     }
 }
