@@ -2,6 +2,7 @@ package com.example.datting.ui.dashboard.Adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -118,7 +119,7 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
-        ImageView image, imgX, imgT, imgTT, img1,img2;
+        ImageView image, imgX, imgT, imgTT, img1,img2,imgsex1,imgsex2;
         TextView name, age, address,name2,age2,address2;
         LinearLayout city_sex;
         AppBarLayout appBarLayout;
@@ -138,6 +139,9 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
             address2=itemView.findViewById(R.id.item_city2);
             img1 = itemView.findViewById(R.id.img1);
             img2 = itemView.findViewById(R.id.img2);
+            imgsex1=itemView.findViewById(R.id.img_sex1);
+            imgsex2=itemView.findViewById(R.id.img_sex2);
+
         }
 
         void setData(ItemModel data) {
@@ -184,6 +188,14 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
                     .override(100,100)
                     .skipMemoryCache(true)
                     .into(imgTT);
+            Glide.with(context)
+                    .load(R.drawable.female)
+                    .centerCrop()
+                    .into(imgsex1);
+            Glide.with(context)
+                    .load(R.drawable.female)
+                    .centerCrop()
+                    .into(imgsex2);
 
             name.setText(data.getName());
             age.setText(data.getAge());
