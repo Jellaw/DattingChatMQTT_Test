@@ -1,6 +1,7 @@
 package com.example.datting.ui.dashboard.Adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,8 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.example.datting.R;
 import com.example.datting.ui.dashboard.Model.ItemModel;
 import com.google.android.material.appbar.AppBarLayout;
@@ -115,7 +118,7 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
-        ImageView image, imgX, imgT, imgTT;
+        ImageView image, imgX, imgT, imgTT, img1,img2;
         TextView name, age, address,name2,age2,address2;
         LinearLayout city_sex;
         AppBarLayout appBarLayout;
@@ -133,6 +136,8 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
             name2=itemView.findViewById(R.id.item_name2);
             age2=itemView.findViewById(R.id.item_age2);
             address2=itemView.findViewById(R.id.item_city2);
+            img1 = itemView.findViewById(R.id.img1);
+            img2 = itemView.findViewById(R.id.img2);
         }
 
         void setData(ItemModel data) {
@@ -140,6 +145,30 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
                     .load(data.getImage())
                     .centerCrop()
                     .into(image);
+            //load anh original resolution vao bitmap=========================
+            Glide.with(context.getApplicationContext())
+                    .load(data.getImage())
+                    .asBitmap()
+                    .into(new SimpleTarget<Bitmap>() {
+                        @Override
+                        public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                            int w = resource.getWidth();
+                            int h = resource.getHeight();
+                            img1.setImageBitmap(resource);
+                        }
+                    });
+            Glide.with(context.getApplicationContext())
+                    .load(data.getImage())
+                    .asBitmap()
+                    .into(new SimpleTarget<Bitmap>() {
+                        @Override
+                        public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                            int w = resource.getWidth();
+                            int h = resource.getHeight();
+                            img2.setImageBitmap(resource);
+                        }
+                    });
+            //===================================================================
             Glide.with(context)
                     .load(R.drawable.cancer)
                     .override(100,100)

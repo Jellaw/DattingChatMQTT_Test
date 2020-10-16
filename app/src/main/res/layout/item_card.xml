@@ -378,6 +378,7 @@
                             android:weightSum="2">
 
                             <ImageView
+                                android:id="@+id/img1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_marginEnd="3dp"
@@ -387,12 +388,13 @@
                             <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:layout_marginStart="3dp"
                                 android:layout_weight="1">
 
                                 <ImageView
+                                    android:id="@+id/img2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:layout_marginStart="3dp"
                                     android:src="@drawable/sample1"
                                     android:tint="#A4090909" />
 
