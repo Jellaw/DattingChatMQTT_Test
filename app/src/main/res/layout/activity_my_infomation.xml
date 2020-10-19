@@ -21,24 +21,25 @@
             android:id="@+id/info_head_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
             android:fontFamily="sans-serif-thin"
             android:text="@string/my_info_head"
             android:textColor="#0B0A0A"
             android:textSize="25dp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/back_btn_info"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/back_btn_icon" />
+            app:srcCompat="@drawable/back2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -307,9 +308,14 @@
                 android:layout_marginRight="15dp">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/chieucao" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/ic_ruler" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -340,10 +346,11 @@
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="70dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_alignParentRight="true"
-                        android:src="@drawable/next_btn" />
+                        android:layout_margin="20dp"
+                        android:src="@drawable/next1" />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -362,9 +369,14 @@
                 android:layout_marginRight="15dp">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/cannang" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/dumbbell" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -395,10 +407,11 @@
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="70dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_alignParentRight="true"
-                        android:src="@drawable/next_btn" />
+                        android:layout_margin="20dp"
+                        android:src="@drawable/next1" />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -417,9 +430,14 @@
                 android:layout_marginRight="15dp">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/hutthuoc" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/tobacco" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -450,10 +468,11 @@
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="70dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_alignParentRight="true"
-                        android:src="@drawable/next_btn" />
+                        android:layout_margin="20dp"
+                        android:src="@drawable/next1"  />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -471,9 +490,14 @@
                 android:layout_marginRight="15dp">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ruoubia" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/ic_wine" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -504,10 +528,11 @@
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="70dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_alignParentRight="true"
-                        android:src="@drawable/next_btn" />
+                        android:layout_margin="20dp"
+                        android:src="@drawable/next1" />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -526,9 +551,14 @@
                 android:layout_marginRight="15dp">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ngonngu" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/ic_language" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -559,10 +589,11 @@
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="70dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_alignParentRight="true"
-                        android:src="@drawable/next_btn" />
+                        android:layout_margin="20dp"
+                        android:src="@drawable/next1" />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -581,9 +612,14 @@
                 android:layout_marginRight="15dp">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/noisong" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/ic_home" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -614,10 +650,11 @@
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="70dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_alignParentRight="true"
-                        android:src="@drawable/next_btn" />
+                        android:layout_margin="20dp"
+                        android:src="@drawable/next1"  />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -636,9 +673,14 @@
                 android:layout_marginRight="15dp">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/honnhan" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/ic_love_black" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -669,10 +711,11 @@
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="70dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_alignParentRight="true"
-                        android:src="@drawable/next_btn" />
+                        android:layout_margin="20dp"
+                        android:src="@drawable/next1"  />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -691,9 +734,14 @@
                 android:layout_marginRight="15dp">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/tongiao" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/church" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -724,10 +772,11 @@
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="70dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_alignParentRight="true"
-                        android:src="@drawable/next_btn" />
+                        android:layout_margin="20dp"
+                        android:src="@drawable/next1"  />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -759,7 +808,7 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/zaloicon" />
+                    android:src="@drawable/zalo" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -799,7 +848,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:cropToPadding="false"
-                    android:src="@drawable/com_facebook_favicon_blue" />
+                    android:src="@drawable/facebook" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -839,7 +888,7 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/insicon" />
+                    android:src="@drawable/instagram" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

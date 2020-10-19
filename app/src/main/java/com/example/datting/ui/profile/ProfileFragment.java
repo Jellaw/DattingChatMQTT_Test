@@ -52,7 +52,7 @@ public class ProfileFragment extends Fragment {
         age = root.findViewById(R.id.age_profile);
         setting_btn = root.findViewById(R.id.setting_btn_profile);
         Glide.with(getActivity())
-                .load(R.drawable.avatar)
+                .load(R.drawable.profile2)
                 .into(avatar);
         name.setText("Nam Anh");
         age.setText("06");

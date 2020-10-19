@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +34,7 @@ public class ChattingActivity extends AppCompatActivity implements MqttCallback 
     private RecyclerView mMessageRecycler;
      MessageListAdapter mMessageAdapter;
      ArrayList<UserMessage> messageList = new ArrayList<>();
+     LinearLayout chatbox;
      //=================================
      private static final String BROKER_URI = "tcp://broker.hivemq.com:1883";
     private static final String TOPIC = "testtopic/2";
@@ -58,11 +60,24 @@ public class ChattingActivity extends AppCompatActivity implements MqttCallback 
         avaUser = findViewById(R.id.avaUser);
         nameUser = findViewById(R.id.userName);
         back_btn = findViewById(R.id.back_btn_chat);
+        chatbox=findViewById(R.id.layout_chatbox);
 
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+        //set chatbox match parent khi typing
+        chatbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        1.0f
+                );
+                chatbox.setLayoutParams(param);;
             }
         });
         //=======RecycleView=====================================================
