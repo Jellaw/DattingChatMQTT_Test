@@ -115,7 +115,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/camera"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
@@ -123,7 +123,7 @@
             app:srcCompat="@drawable/camera" />
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/location"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
@@ -133,10 +133,10 @@
         <LinearLayout
             android:id="@+id/layout_chatbox"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
             android:background="@drawable/type_mess"
             android:gravity="center"
-            android:minHeight="48dp"
             android:orientation="horizontal">
 
             <EditText

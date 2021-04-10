@@ -1,10 +1,13 @@
 package com.example.datting;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -15,6 +18,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
@@ -44,6 +51,7 @@ public class ChattingActivity extends AppCompatActivity implements MqttCallback 
     String name;
     ImageView avaUser;
     TextView nameUser;
+    EditText chattext;
 
     // global types
     private MqttAndroidClient client;
@@ -51,7 +59,7 @@ public class ChattingActivity extends AppCompatActivity implements MqttCallback 
     private String message;
     Handler mHandler;
     Intent i;
-    ImageView back_btn;
+    ImageView back_btn, camera, location;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +69,9 @@ public class ChattingActivity extends AppCompatActivity implements MqttCallback 
         nameUser = findViewById(R.id.userName);
         back_btn = findViewById(R.id.back_btn_chat);
         chatbox=findViewById(R.id.layout_chatbox);
+        camera=findViewById(R.id.camera);
+        location=findViewById(R.id.location);
+        chattext=findViewById(R.id.edittext_chatbox);
 
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,15 +80,27 @@ public class ChattingActivity extends AppCompatActivity implements MqttCallback 
             }
         });
         //set chatbox match parent khi typing
-        chatbox.setOnClickListener(new View.OnClickListener() {
+        chattext.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View view) {
-                LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        1.0f
-                );
-                chatbox.setLayoutParams(param);;
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    camera.setVisibility(View.INVISIBLE);
+                    location.setVisibility(View.INVISIBLE);
+                    LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            1.0f
+                    );
+                    chatbox.setLayoutParams(param);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
         //=======RecycleView=====================================================

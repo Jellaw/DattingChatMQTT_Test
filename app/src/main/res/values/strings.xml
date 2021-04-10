@@ -64,5 +64,6 @@
     <string name="Drink3">Không uống rượu bia</string>
     <string name="Drink4">Tôi ghét rượu bia</string>
     <string name="Drink5">Không hiển thị</string>
+    <string name="friend_online">Không có người nào đang hoạt động.</string>
 
 </resources>
